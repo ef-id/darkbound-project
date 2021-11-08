@@ -9,9 +9,14 @@ const heroProps = {
 };
 
 const mainProps = {
-  image: { src: "/img/video.png", alt: "", width: 500, height: 800},
+  image: { src: "/img/video.png", alt: "", width: 250, height: 400},
   title: "Managed agency selection",
   description: "Stengthen your onboarding process",
+  card: [
+    { image: { src: "/img/document.png", alt: "", width: 30, height: 30}, icon: "<FaBeer />", title: "Brief", desc: "Complete brief writing or simple guidance on what to include, we've got you covered." },
+    { image: { src: "/img/search.png", alt: "", width: 30, height: 30}, title: "Search", desc: "In-depth agency search covering; criteria matching, door knocking and due-dilligence vetting." },
+    { image: { src: "/img/project.png", alt: "", width: 30, height: 30}, title: "Pitch", desc: "Comprehensive pitch management, including comms, diary management and pitch hosting." },
+  ]
 };
 
 export default function Home() {
@@ -26,6 +31,7 @@ export default function Home() {
         />
       </head>
       <div>
+      
         <Hero {...heroProps} />
         <Main {...mainProps} />
         {/** Other sections */}
