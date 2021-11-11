@@ -26,10 +26,11 @@ export const StyledTitle = styled((props) => <SectionHeading {...props} />)`
 
 export const StyledDescription = styled((props) => <SectionSubheading {...props} />)`
   margin-bottom: 2rem;
-  margin-top: auto;
+  margin-top: 0;
 
   @media only screen and (max-width: 600px){
-    font-size: 3vw;
+    font-size: 3.5vw;
+    line-height: 0;
   }
   
 `;
@@ -108,6 +109,10 @@ export const StyledSubSection = styled(({ ...props }) => <div {...props} />)`
     width: 70%;
     margin: 1rem 0;
   }
+
+  @media only screen and (max-width: 660px){
+    width: 100%;
+  }
 `
 
 export const StyledCardContainer = styled(({ ...props }) => <div {...props} />)`
@@ -135,6 +140,11 @@ export const StyledCardContainer = styled(({ ...props }) => <div {...props} />)`
     dispay: flex;
     align-items: center;
     width: 90%;
+    margin: 1rem 0;
+  }
+
+  @media only screen and (max-width: 660px){
+    width: 100%;
     margin: 1rem 0;
   }
 }
