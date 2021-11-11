@@ -4,7 +4,7 @@ export const CardContainer = styled(({...props}) => <div  {...props}/>)`
     display: flex;
     width: 100%;
     height: auto;
-    margin-left: 3rem;
+    margin-bottom: 1.25rem;
     border-radius: 0.5rem;
     background-color: ${({ theme }) => theme.grayF0};
 

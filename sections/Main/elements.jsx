@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { SectionContainer, SectionHeading, SectionSubheading, SectionInnerHeading, SectionParagraph } from "~/components";
-import { CardContainer } from "~/collections";
 
 export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
+  flex-wrap: wrap;  
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  position: relative;
 `;
 
 export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
@@ -13,26 +13,36 @@ export const StyledTextContainer = styled(({ ...props }) => <div {...props} />)`
   width: 100%;
   text-align: center;
   font-family: sans-serif;
+  position: relative;
 `;
 
 export const StyledTitle = styled((props) => <SectionHeading {...props} />)`
   margin-bottom: 0;
+
+  @media only screen and (max-width: 600px){
+    font-size: 6vw;
+  }
 `;
 
 export const StyledDescription = styled((props) => <SectionSubheading {...props} />)`
-  margin-top: 0.5em;
-  line-height: 0;
+  margin-bottom: 2rem;
+  margin-top: auto;
+
+  @media only screen and (max-width: 600px){
+    font-size: 3vw;
+  }
+  
 `;
 
 export const StyledImageContainer = styled(({ ...props }) => <div {...props} />)`
-  margin-top: 4rem;
   max-width: 20rem;
   max-height: auto;
-  width: 60%;
-  height: 60%;
-`;
+  width: 100%;
+  height: 100%;
 
-export const StyledCardContainer = styled(({...props }) => <CardContainer {...props} />)`
+  @media only screen and (max-width: 1023px){
+    width: 100%;
+  }
 `;
 
 export const StyledCardTitle = styled((props) => <SectionInnerHeading {...props} />)`
@@ -43,7 +53,11 @@ export const StyledCardTitle = styled((props) => <SectionInnerHeading {...props}
 
   &:hover {
     color: ${({ theme }) => theme.main};
-    text-decoration: underline
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: 1023px){
+    font-size: 90%;
   }
 `;
 
@@ -51,7 +65,11 @@ export const StyledCardDescription = styled((props) => <SectionParagraph {...pro
   font-size: 0.85rem;
   margin-top: 0;
   margin-bottom: 1.5rem;
-  padding-right: 4rem;
+  padding-right: 1.5rem;
+
+  @media only screen and (max-width: 1023px){
+    font-size: 80%;
+  }
 `;
 
 export const StyledIconImage = styled(({ ...props }) => <div {...props} />)`
@@ -62,21 +80,77 @@ export const StyledIconImage = styled(({ ...props }) => <div {...props} />)`
   padding: 3rem 2rem;
 `
 
-export const StyledArticleSection = styled(({ ...props }) => <div {...props} />)`
+export const StyledSubSection = styled(({ ...props }) => <div {...props} />)`
   display: flex;
-  width: 55%
+  width: 50%;
+
+  @media only screen and (min-width: 1400px){
+    dispay: flex;
+    width: 55%;
+  }
+
+  @media only screen and (min-width: 1024px) and (max-width: 1399px){
+    dispay: flex;
+    width: 77%;
+  }
+
+  @media only screen and (max-width: 1023px){
+    dispay: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 75%
+  }
+
+  @media only screen and (max-width: 768px){
+    dispay: flex;
+    align-items: center;
+    width: 70%;
+    margin: 1rem 0;
+  }
 `
 
-export const StyledPost = styled(({ ...props }) => <div {...props} />)`
+export const StyledCardContainer = styled(({ ...props }) => <div {...props} />)`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin: 5rem 0 1rem;
-  width: 55%;
-  
+  margin: 1rem 2rem 1rem;
+  width: 50%;
+
+
+  @media only screen and (max-width: 1023px){
+    dispay: flex;
+    align-items: center;
+    width: 65%;
+    margin: 1rem 0;
+  }
+
+  @media only screen and (max-width: 768px){
+    dispay: flex;
+    align-items: center;
+    width: 70%;
+    margin: 1rem 0;
+  }
+
+  @media only screen and (max-width: 660px){
+    dispay: flex;
+    align-items: center;
+    width: 90%;
+    margin: 1rem 0;
+  }
+}
 `
 
 export const StyledCardText = styled(({ ...props }) => <div {...props} />)`
   display: flex;
   flex-direction: column;
 `
+
+export const StyledBackgroundImgContainer = styled(({ ...props }) => <div {...props} />)`
+  position: absolute;
+  z-index: -1;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  top: 12rem;
+`
+

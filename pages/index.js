@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Hero } from "../sections";
 import { Main } from "../sections";
 
@@ -9,13 +10,14 @@ const heroProps = {
 };
 
 const mainProps = {
-  image: { src: "/img/video.png", alt: "", width: 250, height: 400},
+  backgroundImg: { src: "/img/background.png", alt: "background", width: 500, height: 250},
+  image: { src: "/img/video.png", alt: "video.png", width: 250, height: 400},
   title: "Managed agency selection",
   description: "Stengthen your onboarding process",
   card: [
-    { image: { src: "/img/document.png", alt: "", width: 30, height: 30}, icon: "<FaBeer />", title: "Brief", desc: "Complete brief writing or simple guidance on what to include, we've got you covered." },
-    { image: { src: "/img/search.png", alt: "", width: 30, height: 30}, title: "Search", desc: "In-depth agency search covering; criteria matching, door knocking and due-dilligence vetting." },
-    { image: { src: "/img/project.png", alt: "", width: 30, height: 30}, title: "Pitch", desc: "Comprehensive pitch management, including comms, diary management and pitch hosting." },
+    { image: { src: "/img/document.png", alt: "document", width: 30, height: 30}, title: "Brief", desc: <Fragment>Complete <b>brief writing or simple guidance</b> on what to include, we've got you covered.</Fragment> },
+    { image: { src: "/img/search.png", alt: "search", width: 30, height: 30}, title: "Search", desc: <Fragment>In-depth agency search covering; <b>criteria matching</b>, door knocking and due-dilligence vetting.</Fragment> },
+    { image: { src: "/img/project.png", alt: "project", width: 30, height: 30}, title: "Pitch", desc: <Fragment>Comprehensive <b>pitch management</b>, including comms, diary management and pitch hosting.</Fragment> },
   ]
 };
 
