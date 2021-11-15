@@ -3,12 +3,17 @@ import { Button, SectionContainer, SectionBigHeading, SectionSubheading } from "
 
 export const StyledContainer = styled(({ height, ...props }) => <SectionContainer {...props} />)`
   align-items: center;
+
+  @media only screen and (min-width: 600px){
+    width: 100%;
+  }
 `;
 
 export const StyledGetStartedBtn = styled((props) => <Button {...props} variant="contained" color="main" />)`
   margin-top: 4.375rem;
   padding-top: 0;
   padding-bottom: 0;
+  
 `;
 
 export const StyledTitle = styled((props) => <SectionBigHeading {...props} />)`

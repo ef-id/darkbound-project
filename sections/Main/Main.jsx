@@ -14,6 +14,7 @@ import {
   StyledCardContainer,
   StyledCardText,
   StyledBackgroundImgContainer,
+  Container
 } from "./elements";
 
 export const Main = ({ backgroundImg, image, card, title, description, ...props }) => {
@@ -24,44 +25,50 @@ export const Main = ({ backgroundImg, image, card, title, description, ...props 
           <StyledTitle>{title}</StyledTitle>
           <StyledDescription>{description}</StyledDescription>
         </StyledTextContainer>
-        <StyledSubSection>
-          <StyledImageContainer>
+        <Container>
+          <StyledBackgroundImgContainer>
             <Image
-              layout="responsive"
-              src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
+              quality={100}
+              src={backgroundImg.src}
+              alt={backgroundImg.alt}
+              layout="fill"
+              objectFit="contain"
+              objectPosition="20% 50%"
+              priority
             />
-          </StyledImageContainer>
-          <StyledCardContainer>
-            {card.map((item, index) => (
-              <Card key={index} {...props}>
-                <StyledIconImage>
-                  <Image
-                    layout="responsive"
-                    src={item.image.src}
-                    width={item.image.width}
-                    height={item.image.height}
-                  />
-                </StyledIconImage>
-                <StyledCardText>
-                  <StyledCardTitle>{item.title}</StyledCardTitle>
-                  <StyledCardDescription>{item.desc}</StyledCardDescription>
-                </StyledCardText>
-              </Card>
-            ))}
-          </StyledCardContainer>
-        </StyledSubSection>
-        <StyledBackgroundImgContainer>
-          <Image
-            layout="responsive"
-            src={backgroundImg.src}
-            alt={backgroundImg.alt}
-            width={backgroundImg.width}
-            height={backgroundImg.height}
-          />
-        </StyledBackgroundImgContainer>
+          </StyledBackgroundImgContainer>
+          <StyledSubSection>
+            <StyledImageContainer>
+              <Image
+                quality={100}
+                layout="responsive"
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                priority
+              />
+            </StyledImageContainer>
+            <StyledCardContainer>
+              {card.map((item, index) => (
+                <Card key={index} {...props} bgColor={index}>
+                  <StyledIconImage>
+                    <Image
+                      layout="responsive"
+                      src={item.image.src}
+                      width={item.image.width}
+                      height={item.image.height}
+                    />
+                  </StyledIconImage>
+                  <StyledCardText>
+                    <StyledCardTitle>{item.title}</StyledCardTitle>
+                    <StyledCardDescription>{item.desc}</StyledCardDescription>
+                  </StyledCardText>
+                </Card>
+              ))}
+            </StyledCardContainer>
+          </StyledSubSection>
+        </Container>
       </StyledContainer>
     </>
   );

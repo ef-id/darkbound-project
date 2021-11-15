@@ -10,8 +10,8 @@ const heroProps = {
 };
 
 const mainProps = {
-  backgroundImg: { src: "/img/background.png", alt: "background", width: 500, height: 250},
-  image: { src: "/img/video.png", alt: "video.png", width: 250, height: 400},
+  backgroundImg: { src: "/img/background.png", alt: "background"},
+  image: { src: "/img/video.png", alt: "video.png", width: 200, height: 320},
   title: "Managed agency selection",
   description: "Stengthen your onboarding process",
   card: [
@@ -32,12 +32,21 @@ export default function Home() {
           rel="stylesheet"
         />
       </head>
-      <div>
+      <div className="container">
       
         <Hero {...heroProps} />
         <Main {...mainProps} />
         {/** Other sections */}
       </div>
+
+      <style jsx>{`
+        .container {
+          display: flex;
+          justify-content: center;
+          alig-items: center;
+          flex-flow: column wrap;
+        }
+      `}</style>
     </>
   );
 }

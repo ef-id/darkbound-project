@@ -1,15 +1,30 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const CardContainer = styled(({...props}) => <div  {...props}/>)`
     display: flex;
-    width: 100%;
+    align-self: flex-start;
+    align-items: center;
     height: auto;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
     border-radius: 0.5rem;
-    background-color: ${({ theme }) => theme.grayF0};
+    border: 2px solid transparent;
+
+
+    ${ props => props.bgColor === 0 && css`
+        width: 90%;
+        background-color: ${({ theme }) => theme.grayF0};
+    `}
+    ${ props => props.bgColor === 1 && css`
+        width: 95%;
+        background-color: ${({ theme }) => theme.grayEA};
+    `}
+    ${ props => props.bgColor === 2 && css`
+        width: 100%;
+        background-color: ${({ theme }) => theme.grayE2};
+    `}
 
     &:hover {
-        border: solid 2px ${({ theme }) => theme.main};
+        border: 2px solid  ${({ theme }) => theme.main};
     }
 `;
 
